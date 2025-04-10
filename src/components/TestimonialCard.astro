@@ -1,0 +1,93 @@
+---
+interface Props {
+  quote: string;
+  author: string;
+  company: string;
+  image?: string;
+}
+
+const { quote, author, company, image } = Astro.props;
+---
+
+<div class="testimonial-card">
+  <div class="quote">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.33333 16H4C4 11.6 7.6 8 12 8V12C9.6 12 8 13.6 8 16H9.33333C10.8 16 12 17.2 12 18.6667V25.3333C12 26.8 10.8 28 9.33333 28H4C2.53333 28 1.33333 26.8 1.33333 25.3333V18.6667C1.33333 17.2 2.53333 16 4 16H9.33333ZM25.3333 16H20C20 11.6 23.6 8 28 8V12C25.6 12 24 13.6 24 16H25.3333C26.8 16 28 17.2 28 18.6667V25.3333C28 26.8 26.8 28 25.3333 28H20C18.5333 28 17.3333 26.8 17.3333 25.3333V18.6667C17.3333 17.2 18.5333 16 20 16H25.3333Z" fill="currentColor" fill-opacity="0.2"/>
+    </svg>
+    <p>{quote}</p>
+  </div>
+  <div class="author">
+    {image && <img src={image} alt={author} />}
+    {!image && <div class="author-initial">{author.charAt(0)}</div>}
+    <div class="author-info">
+      <h4>{author}</h4>
+      <p>{company}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .testimonial-card {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .quote {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .quote svg {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+  
+  .quote p {
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.7;
+  }
+  
+  .author {
+    display: flex;
+    align-items: center;
+  }
+  
+  .author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+  }
+  
+  .author-initial {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-right: 1rem;
+  }
+  
+  .author-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .author-info p {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin: 0;
+  }
+</style>

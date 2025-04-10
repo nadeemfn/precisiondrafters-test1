@@ -1,0 +1,302 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="About Us - Precision Drafters" description="Learn about Precision Drafters, our team, our mission, and our commitment to quality drafting services.">
+	<section class="page-header">
+		<div class="container">
+			<h1>About Precision Drafters</h1>
+			<p>Professional drafting services with a commitment to quality and precision</p>
+		</div>
+	</section>
+	
+	<section class="about-section">
+		<div class="container">
+			<div class="about-grid">
+				<div class="about-content">
+					<h2>Our Story</h2>
+					<p>Precision Drafters was founded in 2008 with a simple mission: to provide high-quality drafting services that help architects, engineers, and construction professionals bring their projects to life.</p>
+					<p>What started as a small team of dedicated drafters has grown into a full-service drafting company with expertise across architectural, structural, mechanical, and electrical disciplines.</p>
+					<p>Over the years, we've worked on hundreds of projects ranging from small residential renovations to large commercial developments, always maintaining our commitment to accuracy, attention to detail, and client satisfaction.</p>
+				</div>
+				<div class="about-image">
+					<img src="/images/about/team.jpg" alt="Precision Drafters Team" />
+				</div>
+			</div>
+			
+			<div class="mission-values">
+				<div class="mission">
+					<h2>Our Mission</h2>
+					<p>To provide exceptional drafting services that exceed client expectations through technical excellence, attention to detail, and responsive customer service.</p>
+				</div>
+				<div class="values">
+					<h2>Our Values</h2>
+					<ul>
+						<li>
+							<h3>Quality</h3>
+							<p>We are committed to delivering accurate, detailed, and code-compliant drawings that meet the highest standards of quality.</p>
+						</li>
+						<li>
+							<h3>Reliability</h3>
+							<p>We understand the importance of deadlines and strive to deliver projects on time, every time.</p>
+						</li>
+						<li>
+							<h3>Collaboration</h3>
+							<p>We work closely with our clients, fostering open communication and partnership throughout the project lifecycle.</p>
+						</li>
+						<li>
+							<h3>Innovation</h3>
+							<p>We continuously improve our processes and adopt new technologies to enhance the quality and efficiency of our services.</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="team-section">
+				<h2>Our Team</h2>
+				<p class="team-intro">Our team consists of experienced drafters, designers, and project managers who are passionate about delivering exceptional results.</p>
+				
+				<div class="team-grid">
+					<div class="team-member">
+						<img src="/images/about/team-member-1.jpg" alt="John Smith" />
+						<h3>John Smith</h3>
+						<p class="position">Founder & Principal</p>
+						<p class="bio">With over 20 years of experience in architectural and structural drafting, John leads our team with expertise and vision.</p>
+					</div>
+					<div class="team-member">
+						<img src="/images/about/team-member-2.jpg" alt="Emily Johnson" />
+						<h3>Emily Johnson</h3>
+						<p class="position">Senior Architectural Drafter</p>
+						<p class="bio">Emily specializes in residential and commercial architectural drafting with 15 years of industry experience.</p>
+					</div>
+					<div class="team-member">
+						<img src="/images/about/team-member-3.jpg" alt="Michael Chen" />
+						<h3>Michael Chen</h3>
+						<p class="position">Mechanical Systems Specialist</p>
+						<p class="bio">Michael brings 12 years of experience in HVAC, plumbing, and fire protection system drafting.</p>
+					</div>
+					<div class="team-member">
+						<img src="/images/about/team-member-4.jpg" alt="Sarah Williams" />
+						<h3>Sarah Williams</h3>
+						<p class="position">Electrical Drafting Lead</p>
+						<p class="bio">Sarah has 10 years of experience specializing in electrical systems for commercial and industrial projects.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="cta-section">
+		<div class="container">
+			<div class="cta-content">
+				<h2>Ready to Work With Us?</h2>
+				<p>Contact us today to discuss your project needs and discover how our team can help bring your vision to life.</p>
+				<Button
+					text="Contact Us"
+					href="/contact"
+					variant="primary"
+					size="large"
+				/>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.page-header {
+		background-color: var(--color-background-alt);
+		padding: 5rem 0;
+		text-align: center;
+	}
+	
+	.page-header h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	
+	.page-header p {
+		font-size: 1.25rem;
+		color: var(--color-text-light);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	
+	.about-section {
+		padding: 5rem 0;
+	}
+	
+	.about-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+		margin-bottom: 5rem;
+	}
+	
+	.about-content h2 {
+		font-size: 2rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.about-content p {
+		margin-bottom: 1.5rem;
+		color: var(--color-text-light);
+	}
+	
+	.about-image img {
+		width: 100%;
+		height: auto;
+		border-radius: var(--border-radius);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+	}
+	
+	.mission-values {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		margin-bottom: 5rem;
+	}
+	
+	.mission h2,
+	.values h2 {
+		font-size: 2rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.mission p {
+		font-size: 1.25rem;
+		color: var(--color-text-light);
+	}
+	
+	.values ul {
+		list-style: none;
+		padding: 0;
+	}
+	
+	.values li {
+		margin-bottom: 2rem;
+	}
+	
+	.values h3 {
+		font-size: 1.25rem;
+		margin-bottom: 0.5rem;
+		color: var(--color-primary);
+	}
+	
+	.values p {
+		color: var(--color-text-light);
+	}
+	
+	.team-section h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+	
+	.team-intro {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 3rem;
+		color: var(--color-text-light);
+	}
+	
+	.team-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+	
+	.team-member {
+		text-align: center;
+	}
+	
+	.team-member img {
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin-bottom: 1.5rem;
+	}
+	
+	.team-member h3 {
+		font-size: 1.25rem;
+		margin-bottom: 0.5rem;
+	}
+	
+	.team-member .position {
+		color: var(--color-primary);
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+	
+	.team-member .bio {
+		color: var(--color-text-light);
+		font-size: 0.875rem;
+	}
+	
+	.cta-section {
+		background-color: var(--color-primary);
+		color: white;
+		text-align: center;
+		padding: 4rem 0;
+	}
+	
+	.cta-content {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+	
+	.cta-content h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: white;
+	}
+	
+	.cta-content p {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		color: rgba(255, 255, 255, 0.9);
+	}
+	
+	@media (max-width: 992px) {
+		.about-grid,
+		.mission-values {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+	}
+	
+	@media (max-width: 768px) {
+		.page-header {
+			padding: 3rem 0;
+		}
+		
+		.page-header h1 {
+			font-size: 2.5rem;
+		}
+		
+		.about-section {
+			padding: 3rem 0;
+		}
+		
+		.about-content h2,
+		.mission h2,
+		.values h2,
+		.team-section h2 {
+			font-size: 1.75rem;
+		}
+		
+		.mission p {
+			font-size: 1.125rem;
+		}
+		
+		.cta-content h2 {
+			font-size: 2rem;
+		}
+		
+		.cta-content p {
+			font-size: 1.125rem;
+		}
+	}
+</style>

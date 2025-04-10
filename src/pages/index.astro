@@ -1,0 +1,403 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Precision Drafters - Professional Drafting Services">
+	<Hero
+		title="Professional Drafting Services for Your Projects"
+		subtitle="We provide high-quality drafting services for architects, engineers, and construction professionals."
+		primaryCta={{
+			text: "Get a Quote",
+			href: "/contact"
+		}}
+		secondaryCta={{
+			text: "View Portfolio",
+			href: "/portfolio"
+		}}
+	/>
+	
+	<section class="services">
+		<div class="container">
+			<div class="section-header">
+				<h2>Our Services</h2>
+				<p>We offer a comprehensive range of drafting services to meet your project needs</p>
+			</div>
+			
+			<div class="services-grid">
+				<ServiceCard
+					title="Architectural Drafting"
+					description="Detailed floor plans, elevations, sections, and construction documents for residential and commercial projects."
+					icon="/images/icons/architectural.svg"
+					href="/services#architectural"
+				/>
+				<ServiceCard
+					title="Structural Drafting"
+					description="Precise structural drawings including foundation plans, framing plans, and structural details."
+					icon="/images/icons/structural.svg"
+					href="/services#structural"
+				/>
+				<ServiceCard
+					title="Mechanical Drafting"
+					description="HVAC, plumbing, and fire protection system drawings for building projects of all sizes."
+					icon="/images/icons/mechanical.svg"
+					href="/services#mechanical"
+				/>
+				<ServiceCard
+					title="Electrical Drafting"
+					description="Comprehensive electrical plans including lighting, power, and low voltage systems."
+					icon="/images/icons/electrical.svg"
+					href="/services#electrical"
+				/>
+				<ServiceCard
+					title="3D Modeling"
+					description="Detailed 3D models and renderings to visualize your project before construction begins."
+					icon="/images/icons/3d-modeling.svg"
+					href="/services#3d-modeling"
+				/>
+				<ServiceCard
+					title="As-Built Drawings"
+					description="Accurate documentation of existing buildings and structures for renovations and facility management."
+					icon="/images/icons/as-built.svg"
+					href="/services#as-built"
+				/>
+				<ServiceCard
+					title="Shop Drawings"
+					description="Detailed fabrication and installation drawings for manufacturers and contractors."
+					icon="/images/icons/shop-drawings.svg"
+					href="/services#shop-drawings"
+				/>
+				<ServiceCard
+					title="Permit Drawings"
+					description="Code-compliant drawings to help you obtain building permits for your projects."
+					icon="/images/icons/permit-drawings.svg"
+					href="/services#permit-drawings"
+				/>
+			</div>
+			
+			<div class="services-cta">
+				<Button
+					text="View All Services"
+					href="/services"
+					variant="outline"
+					size="medium"
+				/>
+			</div>
+		</div>
+	</section>
+	
+	<section class="about-preview">
+		<div class="container">
+			<div class="about-grid">
+				<div class="about-content">
+					<h2>About Precision Drafters</h2>
+					<p>With over 15 years of experience, Precision Drafters has established itself as a trusted partner for architects, engineers, and construction professionals.</p>
+					<p>Our team of skilled drafters combines technical expertise with a deep understanding of design principles to deliver accurate, detailed, and code-compliant drawings that meet your project requirements.</p>
+					<Button
+						text="Learn More About Us"
+						href="/about"
+						variant="primary"
+						size="medium"
+					/>
+				</div>
+				<div class="about-image">
+					<img src="/images/about-preview.jpg" alt="Precision Drafters Team" />
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="process">
+		<div class="container">
+			<div class="section-header">
+				<h2>Our Process</h2>
+				<p>We follow a streamlined process to ensure your project is completed efficiently and accurately</p>
+			</div>
+			
+			<div class="process-steps">
+				<div class="process-step">
+					<div class="step-number">1</div>
+					<h3>Consultation</h3>
+					<p>We begin with a detailed consultation to understand your project requirements, timeline, and budget.</p>
+				</div>
+				<div class="process-step">
+					<div class="step-number">2</div>
+					<h3>Proposal</h3>
+					<p>Based on your requirements, we provide a comprehensive proposal outlining scope, timeline, and cost.</p>
+				</div>
+				<div class="process-step">
+					<div class="step-number">3</div>
+					<h3>Production</h3>
+					<p>Our team creates detailed drawings according to your specifications and industry standards.</p>
+				</div>
+				<div class="process-step">
+					<div class="step-number">4</div>
+					<h3>Review</h3>
+					<p>You review the drawings and provide feedback for any necessary revisions or adjustments.</p>
+				</div>
+				<div class="process-step">
+					<div class="step-number">5</div>
+					<h3>Delivery</h3>
+					<p>Final drawings are delivered in your preferred format, ready for construction or submission.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="testimonials">
+		<div class="container">
+			<div class="section-header">
+				<h2>What Our Clients Say</h2>
+				<p>Hear from architects, engineers, and construction professionals who trust Precision Drafters</p>
+			</div>
+			
+			<div class="testimonials-grid">
+				<TestimonialCard
+					quote="Precision Drafters has been an invaluable partner for our architectural firm. Their attention to detail and quick turnaround times have helped us meet tight project deadlines without compromising quality."
+					author="Michael Johnson"
+					company="Johnson Architects"
+				/>
+				<TestimonialCard
+					quote="The team at Precision Drafters consistently delivers high-quality structural drawings that are accurate and code-compliant. They've become our go-to drafting service for all our engineering projects."
+					author="Sarah Williams"
+					company="Williams Engineering"
+				/>
+				<TestimonialCard
+					quote="Working with Precision Drafters has streamlined our construction documentation process. Their mechanical drafting expertise has been crucial for our complex commercial projects."
+					author="David Thompson"
+					company="Thompson Construction"
+				/>
+			</div>
+		</div>
+	</section>
+	
+	<section class="cta-section">
+		<div class="container">
+			<div class="cta-content">
+				<h2>Ready to Start Your Project?</h2>
+				<p>Contact us today to discuss your drafting needs and get a free quote.</p>
+				<Button
+					text="Contact Us"
+					href="/contact"
+					variant="primary"
+					size="large"
+				/>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	/* Section Styles */
+	section {
+		padding: 5rem 0;
+	}
+	
+	.section-header {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 3rem;
+	}
+	
+	.section-header h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	.section-header p {
+		font-size: 1.125rem;
+		color: var(--color-text-light);
+	}
+	
+	/* Services Section */
+	.services {
+		background-color: var(--color-background);
+	}
+	
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+	
+	.services-cta {
+		text-align: center;
+	}
+	
+	/* About Preview Section */
+	.about-preview {
+		background-color: var(--color-background-alt);
+	}
+	
+	.about-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+	}
+	
+	.about-content h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.about-content p {
+		margin-bottom: 1.5rem;
+		color: var(--color-text-light);
+	}
+	
+	.about-image img {
+		width: 100%;
+		height: auto;
+		border-radius: var(--border-radius);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+	}
+	
+	/* Process Section */
+	.process {
+		background-color: var(--color-background);
+	}
+	
+	.process-steps {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	
+	.process-steps::before {
+		content: '';
+		position: absolute;
+		top: 40px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: var(--color-border);
+		z-index: 1;
+	}
+	
+	.process-step {
+		text-align: center;
+		position: relative;
+		z-index: 2;
+		width: 18%;
+	}
+	
+	.step-number {
+		width: 80px;
+		height: 80px;
+		background-color: var(--color-primary);
+		color: white;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.5rem;
+		font-weight: 700;
+		margin: 0 auto 1.5rem;
+	}
+	
+	.process-step h3 {
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+	}
+	
+	.process-step p {
+		font-size: 0.875rem;
+		color: var(--color-text-light);
+	}
+	
+	/* Testimonials Section */
+	.testimonials {
+		background-color: var(--color-background-alt);
+	}
+	
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	
+	/* CTA Section */
+	.cta-section {
+		background-color: var(--color-primary);
+		color: white;
+		text-align: center;
+		padding: 4rem 0;
+	}
+	
+	.cta-content {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+	
+	.cta-content h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: white;
+	}
+	
+	.cta-content p {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		color: rgba(255, 255, 255, 0.9);
+	}
+	
+	/* Responsive Styles */
+	@media (max-width: 992px) {
+		.about-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+		
+		.about-content {
+			order: 2;
+		}
+		
+		.about-image {
+			order: 1;
+		}
+		
+		.process-steps {
+			flex-direction: column;
+			align-items: center;
+			gap: 2rem;
+		}
+		
+		.process-steps::before {
+			display: none;
+		}
+		
+		.process-step {
+			width: 100%;
+			max-width: 300px;
+		}
+	}
+	
+	@media (max-width: 768px) {
+		section {
+			padding: 3rem 0;
+		}
+		
+		.section-header h2 {
+			font-size: 2rem;
+		}
+		
+		.about-content h2 {
+			font-size: 2rem;
+		}
+		
+		.cta-content h2 {
+			font-size: 2rem;
+		}
+		
+		.cta-content p {
+			font-size: 1.125rem;
+		}
+	}
+</style>

@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Our Services - Precision Drafters" description="Explore our comprehensive drafting services for architectural, structural, mechanical, and electrical projects.">
+	<section class="page-header">
+		<div class="container">
+			<h1>Our Services</h1>
+		</div>
+	</section>
+	
+	<section class="services-grid-section">
+		<div class="container">
+			<div class="services-grid">
+				<div class="service-card">
+					<div class="service-number">1</div>
+					<div class="service-title">
+						<h2>Project Drawings</h2>
+					</div>
+					<div class="service-description">
+						<p>Get high-quality, code-compliant architectural and structural drawings that meet your project requirements.</p>
+					</div>
+					<div class="service-action">
+						<Button
+							text="More Info"
+							href="/services/project-drawings"
+							variant="outline"
+						/>
+					</div>
+				</div>
+				
+				<div class="service-card">
+					<div class="service-number">2</div>
+					<div class="service-title">
+						<h2>BIM Modeling</h2>
+					</div>
+					<div class="service-description">
+						<p>Cutting-edge Building Information Modeling (BIM) services that streamline your construction workflow and enhance project outcomes.</p>
+					</div>
+					<div class="service-action">
+						<Button
+							text="More Info"
+							href="/services/bim-modeling"
+							variant="outline"
+						/>
+					</div>
+				</div>
+				
+				<div class="service-card">
+					<div class="service-number">3</div>
+					<div class="service-title">
+						<h2>Energy Modeling</h2>
+					</div>
+					<div class="service-description">
+						<p>Energy modeling services that help Architects, Builders, and Property owners create sustainable, cost-efficient buildings while meeting strict energy codes and standards.</p>
+					</div>
+					<div class="service-action">
+						<Button
+							text="More Info"
+							href="/services/energy-modeling"
+							variant="outline"
+						/>
+					</div>
+				</div>
+				
+				<div class="service-card">
+					<div class="service-number">4</div>
+					<div class="service-title">
+						<h2>3D Visualization</h2>
+					</div>
+					<div class="service-description">
+						<p>Photorealistic 3D renderings and visualizations that bring your designs to life and help communicate your vision to clients and stakeholders.</p>
+					</div>
+					<div class="service-action">
+						<Button
+							text="More Info"
+							href="/services/3d-visualization"
+							variant="outline"
+						/>
+					</div>
+				</div>
+				
+				<div class="service-card">
+					<div class="service-number">5</div>
+					<div class="service-title">
+						<h2>As-Built Drawings</h2>
+					</div>
+					<div class="service-description">
+						<p>Accurate documentation of existing buildings and structures for renovations, additions, or facility management purposes.</p>
+					</div>
+					<div class="service-action">
+						<Button
+							text="More Info"
+							href="/services/as-built-drawings"
+							variant="outline"
+						/>
+					</div>
+				</div>
+				
+				<div class="service-card">
+					<div class="service-number">6</div>
+					<div class="service-title">
+						<h2>Permit Drawings</h2>
+					</div>
+					<div class="service-description">
+						<p>Code-compliant drawings that meet local building department requirements to help you obtain necessary permits for your construction projects.</p>
+					</div>
+					<div class="service-action">
+						<Button
+							text="More Info"
+							href="/services/permit-drawings"
+							variant="outline"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="cta-section">
+		<div class="container">
+			<div class="cta-content">
+				<h2>Need a Custom Drafting Solution?</h2>
+				<p>Contact us to discuss your specific project requirements and get a personalized quote.</p>
+				<Button
+					text="Contact Us"
+					href="/contact"
+					variant="primary"
+					size="large"
+				/>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.page-header {
+		padding: 5rem 0 3rem;
+		text-align: center;
+	}
+	
+	.page-header h1 {
+		font-size: 3.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	/* Services Grid Section */
+	.services-grid-section {
+		padding: 3rem 0 5rem;
+	}
+	
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+	
+	.service-card {
+		display: flex;
+		flex-direction: column;
+		padding: 2rem;
+		border-radius: var(--border-radius);
+		background-color: var(--color-background);
+		transition: all 0.3s ease;
+		height: 100%;
+	}
+	
+	.service-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	}
+	
+	.service-number {
+		font-size: 3rem;
+		font-weight: 700;
+		margin-bottom: 1.5rem;
+	}
+	
+	.service-title h2 {
+		font-size: 1.75rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.service-description {
+		margin-bottom: 2rem;
+		flex-grow: 1;
+	}
+	
+	.service-description p {
+		color: var(--color-text-light);
+	}
+	
+	.service-action {
+		margin-top: auto;
+	}
+	
+	/* CTA Section */
+	.cta-section {
+		background-color: var(--color-primary);
+		color: white;
+		text-align: center;
+		padding: 4rem 0;
+	}
+	
+	.cta-content {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+	
+	.cta-content h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: white;
+	}
+	
+	.cta-content p {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		color: rgba(255, 255, 255, 0.9);
+	}
+	
+	/* Responsive Styles */
+	@media (max-width: 1024px) {
+		.services-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	
+	@media (max-width: 768px) {
+		.page-header {
+			padding: 3rem 0 2rem;
+		}
+		
+		.page-header h1 {
+			font-size: 2.5rem;
+		}
+		
+		.services-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.services-grid-section {
+			padding: 2rem 0 3rem;
+		}
+		
+		.cta-content h2 {
+			font-size: 2rem;
+		}
+		
+		.cta-content p {
+			font-size: 1.125rem;
+		}
+	}
+</style>

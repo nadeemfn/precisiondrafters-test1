@@ -1,0 +1,130 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  primaryCta: {
+    text: string;
+    href: string;
+  };
+  secondaryCta?: {
+    text: string;
+    href: string;
+  };
+  image?: string;
+}
+
+const { 
+  title, 
+  subtitle, 
+  primaryCta, 
+  secondaryCta,
+  image = "/images/hero-image.jpg"
+} = Astro.props;
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+      <div class="cta-buttons">
+        <Button 
+          text={primaryCta.text} 
+          href={primaryCta.href} 
+          variant="primary" 
+          size="large" 
+        />
+        {secondaryCta && (
+          <Button 
+            text={secondaryCta.text} 
+            href={secondaryCta.href} 
+            variant="outline" 
+            size="large" 
+          />
+        )}
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src={image} alt="Precision Drafters" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 5rem 0;
+    background-color: var(--color-background-alt);
+  }
+  
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+  }
+  
+  .hero-content p {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    max-width: 90%;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 992px) {
+    .hero .container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .hero-content {
+      text-align: center;
+    }
+    
+    .hero-content p {
+      max-width: 100%;
+    }
+    
+    .cta-buttons {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .hero {
+      padding: 3rem 0;
+    }
+    
+    .hero-content h1 {
+      font-size: 2.25rem;
+    }
+    
+    .hero-content p {
+      font-size: 1.125rem;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+    }
+  }
+</style>

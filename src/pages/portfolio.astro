@@ -1,0 +1,382 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Portfolio - Precision Drafters" description="View our portfolio of drafting projects including architectural, structural, mechanical, and electrical drawings.">
+	<section class="page-header">
+		<div class="container">
+			<h1>Our Portfolio</h1>
+			<p>Explore our recent drafting projects across various disciplines</p>
+		</div>
+	</section>
+	
+	<section class="portfolio-section">
+		<div class="container">
+			<div class="portfolio-filters">
+				<button class="filter-btn active" data-filter="all">All Projects</button>
+				<button class="filter-btn" data-filter="architectural">Architectural</button>
+				<button class="filter-btn" data-filter="structural">Structural</button>
+				<button class="filter-btn" data-filter="mechanical">Mechanical</button>
+				<button class="filter-btn" data-filter="electrical">Electrical</button>
+			</div>
+			
+			<div class="portfolio-grid">
+				<div class="portfolio-item" data-category="architectural">
+					<div class="portfolio-image">
+						<img src="/images/portfolio/project-1.jpg" alt="Modern Residential Home" />
+						<div class="overlay">
+							<div class="overlay-content">
+								<h3>Modern Residential Home</h3>
+								<p>Architectural Drafting</p>
+								<a href="/portfolio/modern-residential-home" class="btn-view">View Project</a>
+							</div>
+						</div>
+					</div>
+					<div class="portfolio-info">
+						<h3>Modern Residential Home</h3>
+						<p>Architectural Drafting</p>
+					</div>
+				</div>
+				
+				<div class="portfolio-item" data-category="structural">
+					<div class="portfolio-image">
+						<img src="/images/portfolio/project-2.jpg" alt="Commercial Office Building" />
+						<div class="overlay">
+							<div class="overlay-content">
+								<h3>Commercial Office Building</h3>
+								<p>Structural Drafting</p>
+								<a href="/portfolio/commercial-office-building" class="btn-view">View Project</a>
+							</div>
+						</div>
+					</div>
+					<div class="portfolio-info">
+						<h3>Commercial Office Building</h3>
+						<p>Structural Drafting</p>
+					</div>
+				</div>
+				
+				<div class="portfolio-item" data-category="mechanical">
+					<div class="portfolio-image">
+						<img src="/images/portfolio/project-3.jpg" alt="Hospital HVAC System" />
+						<div class="overlay">
+							<div class="overlay-content">
+								<h3>Hospital HVAC System</h3>
+								<p>Mechanical Drafting</p>
+								<a href="/portfolio/hospital-hvac-system" class="btn-view">View Project</a>
+							</div>
+						</div>
+					</div>
+					<div class="portfolio-info">
+						<h3>Hospital HVAC System</h3>
+						<p>Mechanical Drafting</p>
+					</div>
+				</div>
+				
+				<div class="portfolio-item" data-category="electrical">
+					<div class="portfolio-image">
+						<img src="/images/portfolio/project-4.jpg" alt="Retail Center Electrical" />
+						<div class="overlay">
+							<div class="overlay-content">
+								<h3>Retail Center Electrical</h3>
+								<p>Electrical Drafting</p>
+								<a href="/portfolio/retail-center-electrical" class="btn-view">View Project</a>
+							</div>
+						</div>
+					</div>
+					<div class="portfolio-info">
+						<h3>Retail Center Electrical</h3>
+						<p>Electrical Drafting</p>
+					</div>
+				</div>
+				
+				<div class="portfolio-item" data-category="architectural">
+					<div class="portfolio-image">
+						<img src="/images/portfolio/project-5.jpg" alt="Luxury Apartment Complex" />
+						<div class="overlay">
+							<div class="overlay-content">
+								<h3>Luxury Apartment Complex</h3>
+								<p>Architectural Drafting</p>
+								<a href="/portfolio/luxury-apartment-complex" class="btn-view">View Project</a>
+							</div>
+						</div>
+					</div>
+					<div class="portfolio-info">
+						<h3>Luxury Apartment Complex</h3>
+						<p>Architectural Drafting</p>
+					</div>
+				</div>
+				
+				<div class="portfolio-item" data-category="structural">
+					<div class="portfolio-image">
+						<img src="/images/portfolio/project-6.jpg" alt="Bridge Design" />
+						<div class="overlay">
+							<div class="overlay-content">
+								<h3>Bridge Design</h3>
+								<p>Structural Drafting</p>
+								<a href="/portfolio/bridge-design" class="btn-view">View Project</a>
+							</div>
+						</div>
+					</div>
+					<div class="portfolio-info">
+						<h3>Bridge Design</h3>
+						<p>Structural Drafting</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="cta-section">
+		<div class="container">
+			<div class="cta-content">
+				<h2>Ready to Start Your Project?</h2>
+				<p>Contact us today to discuss your drafting needs and get a free quote.</p>
+				<Button
+					text="Contact Us"
+					href="/contact"
+					variant="primary"
+					size="large"
+				/>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const filterBtns = document.querySelectorAll('.filter-btn');
+		const portfolioItems = document.querySelectorAll('.portfolio-item');
+		
+		filterBtns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				// Remove active class from all buttons
+				filterBtns.forEach(b => b.classList.remove('active'));
+				
+				// Add active class to clicked button
+				btn.classList.add('active');
+				
+				// Get filter value
+				const filter = btn.getAttribute('data-filter');
+				
+				// Filter portfolio items
+				portfolioItems.forEach(item => {
+					if (filter === 'all' || item.getAttribute('data-category') === filter) {
+						item.style.display = 'block';
+					} else {
+						item.style.display = 'none';
+					}
+				});
+			});
+		});
+	});
+</script>
+
+<style>
+	.page-header {
+		background-color: var(--color-background-alt);
+		padding: 5rem 0;
+		text-align: center;
+	}
+	
+	.page-header h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	
+	.page-header p {
+		font-size: 1.25rem;
+		color: var(--color-text-light);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	
+	.portfolio-section {
+		padding: 5rem 0;
+	}
+	
+	.portfolio-filters {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-bottom: 3rem;
+	}
+	
+	.filter-btn {
+		background: none;
+		border: 1px solid var(--color-border);
+		padding: 0.75rem 1.5rem;
+		border-radius: var(--border-radius);
+		font-family: var(--font-family);
+		font-size: 1rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+	
+	.filter-btn:hover {
+		border-color: var(--color-primary);
+		color: var(--color-primary);
+	}
+	
+	.filter-btn.active {
+		background-color: var(--color-primary);
+		border-color: var(--color-primary);
+		color: white;
+	}
+	
+	.portfolio-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		gap: 2rem;
+	}
+	
+	.portfolio-item {
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease;
+	}
+	
+	.portfolio-item:hover {
+		transform: translateY(-10px);
+	}
+	
+	.portfolio-image {
+		position: relative;
+		overflow: hidden;
+		height: 250px;
+	}
+	
+	.portfolio-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease;
+	}
+	
+	.portfolio-item:hover .portfolio-image img {
+		transform: scale(1.1);
+	}
+	
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	
+	.portfolio-item:hover .overlay {
+		opacity: 1;
+	}
+	
+	.overlay-content {
+		text-align: center;
+		color: white;
+		padding: 1rem;
+	}
+	
+	.overlay-content h3 {
+		font-size: 1.25rem;
+		margin-bottom: 0.5rem;
+	}
+	
+	.overlay-content p {
+		margin-bottom: 1.5rem;
+		color: rgba(255, 255, 255, 0.8);
+	}
+	
+	.btn-view {
+		display: inline-block;
+		background-color: var(--color-primary);
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: var(--border-radius);
+		font-weight: 600;
+		transition: background-color 0.3s ease;
+	}
+	
+	.btn-view:hover {
+		background-color: var(--color-primary-dark);
+		color: white;
+	}
+	
+	.portfolio-info {
+		padding: 1.5rem;
+		background-color: white;
+	}
+	
+	.portfolio-info h3 {
+		font-size: 1.25rem;
+		margin-bottom: 0.5rem;
+	}
+	
+	.portfolio-info p {
+		color: var(--color-text-light);
+		font-size: 0.875rem;
+	}
+	
+	.cta-section {
+		background-color: var(--color-primary);
+		color: white;
+		text-align: center;
+		padding: 4rem 0;
+	}
+	
+	.cta-content {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+	
+	.cta-content h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: white;
+	}
+	
+	.cta-content p {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		color: rgba(255, 255, 255, 0.9);
+	}
+	
+	@media (max-width: 992px) {
+		.portfolio-grid {
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		}
+	}
+	
+	@media (max-width: 768px) {
+		.page-header {
+			padding: 3rem 0;
+		}
+		
+		.page-header h1 {
+			font-size: 2.5rem;
+		}
+		
+		.portfolio-section {
+			padding: 3rem 0;
+		}
+		
+		.portfolio-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.cta-content h2 {
+			font-size: 2rem;
+		}
+		
+		.cta-content p {
+			font-size: 1.125rem;
+		}
+	}
+</style>
